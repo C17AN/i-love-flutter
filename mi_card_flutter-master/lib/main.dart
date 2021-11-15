@@ -11,7 +11,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
-        body: Container(),
+        body: SafeArea(
+          child: Container(
+            height: 100,
+            width: 100,
+            margin: EdgeInsets.all(20),
+            color: Colors.teal,
+            child: Text("Hi Hi"),
+          ),
+        ),
       ),
     );
   }
