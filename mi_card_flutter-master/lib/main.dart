@@ -10,40 +10,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.blue[100],
         body: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(
-                child: Text("Container 1"),
-                width: 100,
-                color: Colors.red,
-              ),
-              Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Text("Container 2"),
-                      width: 100,
-                      height: 100,
-                      color: Colors.yellow,
-                    ),
-                    Container(
-                      child: Text("Container 3"),
-                      width: 100,
-                      height: 100,
-                      color: Colors.green,
-                    ),
-                  ]),
-              Container(
-                child: Text("Container 4"),
-                width: 100,
-                color: Colors.blue,
-              )
-            ],
-          ),
+          child: Column(children: <Widget>[
+            CircleAvatar(
+                radius: 75,
+                // backgroundColor: Colors.blue[50],
+                backgroundImage: AssetImage('images/profile.png')
+
+                // Q. AssetImage 타입과 Image.asset 타입의 차이는 무엇인가?
+                // child: Image.asset('images/profile.png'),
+                ),
+          ]),
         ),
       ),
     );
