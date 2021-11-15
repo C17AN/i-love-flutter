@@ -1,0 +1,34 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "mi_card_flutter-master",
+      "cwd": "mi_card_flutter-master",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "mi_card_flutter-master (profile mode)",
+      "cwd": "mi_card_flutter-master",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "my_flutter_app",
+      "cwd": "my_flutter_app",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "my_flutter_app (profile mode)",
+      "cwd": "my_flutter_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    }
+  ]
+}
