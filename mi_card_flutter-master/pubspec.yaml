@@ -27,3 +27,20 @@ flutter:
 
   assets:
    - images/profile.png
+  fonts:
+  - family: IBMPlexSans
+    fonts:
+    - asset: fonts/IBMPlexSansKR-ExtraLight.ttf
+      weight: 200
+    - asset: fonts/IBMPlexSansKR-Light.ttf
+      weight: 300
+    - asset: fonts/IBMPlexSansKR-Regular.ttf
+      weight: 400
+    - asset: fonts/IBMPlexSansKR-Medium.ttf
+      weight: 500
+  - family: Source Sans Pro
+    fonts:
+    - asset: fonts/SourceSansPro-Light.ttf
+      weight: 200
+    - asset: fonts/SourceSansPro-Regular.ttf
+      weight: 400
