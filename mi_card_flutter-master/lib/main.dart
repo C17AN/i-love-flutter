@@ -40,6 +40,13 @@ class MyApp extends StatelessWidget {
                         color: Colors.blue[400],
                         letterSpacing: 1.2),
                   ),
+                  SizedBox(
+                      height: 30,
+                      width: 180,
+                      child: Divider(
+                        height: 1,
+                        color: Colors.black54,
+                      )),
                   Container(
                     padding: EdgeInsets.all(10),
                     margin: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
