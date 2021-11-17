@@ -53,27 +53,37 @@ class MyApp extends StatelessWidget {
                           offset: Offset(5, 3),
                         )
                       ],
-                      color: Colors.white,
+                      color: Colors.white70,
                     ),
                     child: Row(
                       children: <Widget>[
                         Icon(
-                          Icons.emoji_events,
-                          color: Colors.white,
+                          Icons.accessibility_new,
+                          color: Colors.blueGrey[400],
                           size: 28,
                         ),
                         Padding(
                           padding:
                               EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                           child: Text(
-                            "Father of Flutter",
+                            "안녕하세요, 찬민입니다!",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500, fontSize: 16),
                           ),
-                        )
+                        ),
                       ],
                     ),
-                  )
+                  ),
+                  Card(
+                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.airplanemode_on_rounded,
+                          size: 36,
+                        ),
+                        title: Text('클라이언트 개발자가 되고자 합니다.'),
+                        subtitle: Text("주요 스택 : Flutter, Javascript"),
+                      ))
                 ]),
               ]),
         ),
