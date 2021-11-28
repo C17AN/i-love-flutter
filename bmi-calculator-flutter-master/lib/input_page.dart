@@ -17,6 +17,7 @@ class _InputPageState extends State<InputPage> {
   Color femaleCardColor = kInActiveColor;
   num height = 180.0;
   num weight = 50.0;
+  int age = 1;
   var selectedGender;
 
   @override
@@ -82,6 +83,7 @@ class _InputPageState extends State<InputPage> {
                         height.toInt().toString(),
                         style: kNumberTextStyle,
                       ),
+                      SizedBox(width: 2),
                       Text(
                         'cm',
                         style: kLabelTextStyle,
@@ -134,7 +136,11 @@ class _InputPageState extends State<InputPage> {
                               weight.toString(),
                               style: kNumberTextStyle,
                             ),
-                            Text('kg', style: kLabelTextStyle),
+                            SizedBox(width: 2),
+                            Text(
+                              'kg',
+                              style: kLabelTextStyle,
+                            ),
                           ],
                         ),
                         SizedBox(height: 10),
@@ -142,13 +148,17 @@ class _InputPageState extends State<InputPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RoundedIconButton(
-                              onPress: () {},
-                              icon: Icon(Icons.add),
+                              onPress: () {
+                                setState(() => weight += 1);
+                              },
+                              icon: FontAwesomeIcons.plus,
                             ),
                             SizedBox(width: 10),
                             RoundedIconButton(
-                              onPress: () {},
-                              icon: Icon(Icons.remove),
+                              onPress: () {
+                                setState(() => weight -= 1);
+                              },
+                              icon: FontAwesomeIcons.minus,
                             ),
                           ],
                         ),
@@ -158,7 +168,54 @@ class _InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: Color(0xFFf7fffb),
+                    colour: kInActiveColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "나이",
+                          style: kLabelTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: [
+                            Text(
+                              age.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            SizedBox(width: 2),
+                            Text(
+                              '세',
+                              style: kLabelTextStyle,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundedIconButton(
+                              onPress: () {
+                                setState(() => age += 1);
+                              },
+                              icon: FontAwesomeIcons.plus,
+                            ),
+                            SizedBox(width: 10),
+                            RoundedIconButton(
+                              onPress: () {
+                                setState(() {
+                                  if (age == 0) return;
+                                  age -= 1;
+                                });
+                              },
+                              icon: FontAwesomeIcons.minus,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
