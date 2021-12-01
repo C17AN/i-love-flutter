@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quizzler/question.dart';
 
 void main() => runApp(Quizzler());
 
@@ -6,6 +7,7 @@ class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.grey.shade900,
         body: SafeArea(
@@ -26,6 +28,13 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Widget> scoreKeeper = [];
+  int selectedQuestionIndex = 0;
+
+  List<Question> questionList = [
+    Question(q: "딸기는 장미과에 속한다.", a: false),
+    Question(q: "우리나라에 가장 넓은 차선은 광화문 앞에 16차선이다.", a: false),
+    Question(q: '아라비아 숫자 1부터 100사이에 9라는 숫자는 모두 합해 10개가 들어 있다.', a: true),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +48,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questionList[selectedQuestionIndex].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -57,16 +66,26 @@ class _QuizPageState extends State<QuizPage> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.green[300],
               ),
               child: Text(
-                'True',
+                'O',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20.0,
                 ),
               ),
               onPressed: () {
+                bool correctAnswer =
+                    questionList[selectedQuestionIndex].questionAnswer;
+                if (correctAnswer == true) {
+                  print('User got it right!');
+                } else {
+                  print("User got in wrong!");
+                }
+                setState(() {
+                  selectedQuestionIndex += 1;
+                });
                 //The user picked true.
               },
             ),
@@ -83,13 +102,16 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               child: Text(
-                'False',
+                'X',
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.white,
                 ),
               ),
               onPressed: () {
+                setState(() {
+                  selectedQuestionIndex += 1;
+                });
                 //The user picked false.
               },
             ),
